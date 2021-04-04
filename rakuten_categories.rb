@@ -22,7 +22,7 @@ class RakutenCategory
   end
 
   def category_names
-    @category_names ||= doc.css(".item > .dui-list ._ellipsis").map(&:text)
+    @category_names ||= doc.css(".item > .dui-list > a > ._ellipsis").map(&:text)
   end
 end
 
