@@ -24,6 +24,19 @@ class RakutenCategory
   def category_names
     @category_names ||= doc.css(".item > .dui-list > a > ._ellipsis").map(&:text)
   end
+
+  def category_nums
+    @category_nums ||= extracting_number
+  end
+
+  def extracting_number
+    nums = []
+    doc.css(".item > .dui-list > a").each do |link|
+      num = link[:href].slice(-17..-12)
+      nums.push(num)
+    end
+    nums
+  end
 end
 
-p RakutenCategory.new("https://search.rakuten.co.jp/search/event/%E3%81%B5%E3%82%8B%E3%81%95%E3%81%A8%E7%B4%8D%E7%A8%8E/?ev=40&lang=ja&s=4").category_names
+p RakutenCategory.new("https://search.rakuten.co.jp/search/event/%E3%81%B5%E3%82%8B%E3%81%95%E3%81%A8%E7%B4%8D%E7%A8%8E/?ev=40&lang=ja&s=4").category_nums
