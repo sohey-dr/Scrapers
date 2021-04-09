@@ -25,9 +25,16 @@ class CallNumOnGo
     @doc ||= parse_html
   end
 
+  # ファイルが欲しい時
+  # def set_file
+  #   File.open("test.html", "w") do |f| 
+  #     f.puts(doc)
+  #   end
+  # end
+
   def num
-    doc.css(".Z1hOCe > div > span[2]")
+    doc.css(".BNeawe > span").text
   end
 end
 
-p CallNumOnGo.new("MSK安心ステーション").url
+p CallNumOnGo.new("MSK安心ステーション").set_file
