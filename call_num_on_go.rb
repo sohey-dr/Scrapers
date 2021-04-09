@@ -2,10 +2,14 @@ require 'nokogiri'
 require 'open-uri'
 
 class CallNumOnGo
-  attr_reader :url
+  attr_reader :word
 
   def initialize(word)
-    @url = "https://www.google.com/search?q=#{word}"
+    @word = URI.encode_www_form(q: word)
+  end
+
+  def url
+    @url ||= "https://www.google.com/search?#{word}"
   end
 
   def parse_html
