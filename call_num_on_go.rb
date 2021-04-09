@@ -32,9 +32,9 @@ class CallNumOnGo
   #   end
   # end
 
-  def num
-    doc.css(".BNeawe > span").text
+  def number
+    doc.css(".BNeawe > span > span")[3].text
   end
 end
 
-p CallNumOnGo.new("MSK安心ステーション").set_file
+p CallNumOnGo.new("MSK安心ステーション").number
