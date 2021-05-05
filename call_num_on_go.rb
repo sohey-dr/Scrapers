@@ -37,4 +37,4 @@ class CallNumOnGo
   end
 end
 
-p CallNumOnGo.new("MSK安心ステーション").number
+p CallNumOnGo.new(ARGV[0]).number
