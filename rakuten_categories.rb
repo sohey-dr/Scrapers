@@ -9,7 +9,7 @@ class RakutenCategory
   end
 
   def title
-    puts "# #{doc.css(".-active").text.chop}"
+    puts "# #{doc.css(".-active").text.chop.delete("すべて")}"
   end
 
   def output_categories
