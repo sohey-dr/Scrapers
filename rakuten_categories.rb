@@ -8,7 +8,7 @@ class RakutenCategory
     @url = url
   end
 
-  def show
+  def output_categories
     category_nums.zip(category_names) do |num,name|
       puts "'#{num}', # #{name}"
     end
@@ -45,4 +45,4 @@ class RakutenCategory
   end
 end
 
-RakutenCategory.new(ARGV[0]).show
+RakutenCategory.new(ARGV[0]).output_categories
