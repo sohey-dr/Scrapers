@@ -8,7 +8,12 @@ class RakutenCategory
     @url = url
   end
 
+  def title
+    puts "# #{doc.css(".-active").text.chop}"
+  end
+
   def output_categories
+    title
     category_nums.zip(category_names) do |num,name|
       puts "'#{num}', # #{name}"
     end
