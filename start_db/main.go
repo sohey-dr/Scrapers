@@ -23,7 +23,7 @@ func getCatgoryUrls()  {
 	doc, _ := goquery.NewDocumentFromReader(res.Body)
 	doc.Find(".tag-children-ul > li > a").Each(func(i int, s *goquery.Selection) {
 		href, _ := s.Attr("href")
-		var next_url string = `"https://startup-db.com` + href + `,"`
+		var next_url string = `"https://startup-db.com` + href + `",`
 		fmt.Println(next_url)
 	})
 }
@@ -38,7 +38,7 @@ func getComUrlByList()  {
 	doc, _ := goquery.NewDocumentFromReader(res.Body)
 	doc.Find(".CompanyCard > a").Each(func(i int, s *goquery.Selection) {
 		href, _ := s.Attr("href")
-		var next_url string = `"https://startup-db.com` + href + `,"`
+		var next_url string = `"https://startup-db.com` + href + `",`
 		fmt.Println(next_url)
 	})
 }
