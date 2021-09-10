@@ -7,11 +7,13 @@ import (
  
 	"github.com/PuerkitoBio/goquery"
 )
- 
-const url = "https://startup-db.com/tags"
 
 func main() {
-	res, err := http.Get(url)
+	getCatgoryUrls()
+}
+
+func getCatgoryUrls()  {
+	res, err := http.Get("https://startup-db.com/tags")
 	if err != nil {
 		log.Println(err)
 	}
